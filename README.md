@@ -4,12 +4,18 @@ Ce dépôt GitHub contient les documents et le code source associés au projet d
 
 ## Initialisation du Projet
 
-Si vous possédez déjà une base de données appelée 'twitch', remplacez les premières lignes du code par :
+Si vous possédez déjà une base de données appelée 'twitch', remplacez les premières lignes du code de Global.sql par :
 
 
 ```sql
 CREATE DATABASE projet_nom_1;
 USE DATABASE projet_nom_1;
+```
+
+Ainsi que celle de Full_insert_script.sql et requêtes.sql par : 
+
+```sql
+USE twitch;
 ```
 # Modèle de Données
 
