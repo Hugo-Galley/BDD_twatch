@@ -1,5 +1,6 @@
 -- selection d'une chaine en stream qui parle francais avec le tag music hebreger au japon dont le nombre de viewer actif est > 300 et ou un mec a été banii pour Violation des regles et qui est sub au rang 1 
 -- 1
+USE twitch;
 
 SELECT DISTINCT chaine.nom FROM chaine 
 JOIN Users ON chaine.IDUser = Users.UserID 
