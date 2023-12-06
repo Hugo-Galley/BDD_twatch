@@ -30,7 +30,7 @@ JOIN Reactions ON Users.UserID = Reactions.IDUsers
 WHERE premium.actif = true AND verification_mail.verifier = true AND tickets.sujet LIKE '%assistance technique%'
 AND cagnotte.montant >= 1000 AND Moderateur.Date_debut_moderation LIKE '%2023-11-27%' AND Reactions.type_reaction = 'Like';
 
---3
+-- 3
 
 SELECT DISTINCT u.username
 FROM Users AS u
@@ -48,7 +48,7 @@ JOIN ActivityHistory AS ah ON u.UserID = ah.IdUser
 JOIN UserLanguages AS ul ON u.UserID = ul.IdUser
 JOIN PrivateMessages AS pm ON u.UserID = pm.SenderID
 JOIN Polls AS p ON u.UserID = p.IdUser
-WHERE  us.Followers < 5000 and c.nbr_abonne > 1000 
+WHERE  us.Followers < 5000 and c.nbr_abonne > 1000;
 
 -- selection d'un user qui a recu une notif concernant un comabt de nain dont les vu sont superieur a 4000  qui a recu un message privé disant hey qui a u badge de niveau 3  qui a activer Cacher_état_abonnement_carte_spectateur_chat qui a fait un don le 23-11-26
 -- 4 
@@ -84,4 +84,14 @@ JOIN HistoriqueDiffusion AS hd ON s.IdUserSignale = hd.IdChaine
 JOIN Rediffusion AS r ON s.IdUserSignalant = r.IdUserRediffusion
 JOIN Users AS u1 ON s.IdUserSignalant = u1.UserID
 JOIN Users AS u2 ON s.IdUserSignale = u2.UserID
-JOIN Chaine AS c ON s.IdUserSignale = c.chaineID
+JOIN Chaine AS c ON s.IdUserSignale = c.chaineID;
+
+-- 7
+
+SELECT DISTINCT emotes.nom FROM emotes
+JOIN stream on emotes.IDstream = stream.streamID
+JOIN chaine on emotes.IDchaine = chaine.chaineID
+JOIN emotestats on emotes.EmotesID = emotestats.IDemote
+JOIN alerte on chaine.ChaineID = alerte.IDchaine
+JOIN partage on stream.StreamID = partage.IDStream
+JOIN collection on chaine.ChaineID = collection.IDChaine;
