@@ -44,7 +44,7 @@ Le projet a pu être mené à bien grâce à la participation de :
 
 - [Hugo Galley](https://github.com/Hugo-Galley)
 - [Christophe Jarjoura](https://github.com/DysterFall)
-- Justine Guy
+- [Justine Guy](https://github.com/ekyoko)
 - Benmoussa Maïssa
 - Aziz
 
