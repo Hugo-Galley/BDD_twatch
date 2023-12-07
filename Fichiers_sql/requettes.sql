@@ -95,3 +95,99 @@ JOIN emotestats on emotes.EmotesID = emotestats.IDemote
 JOIN alerte on chaine.ChaineID = alerte.IDchaine
 JOIN partage on stream.StreamID = partage.IDStream
 JOIN collection on chaine.ChaineID = collection.IDChaine;
+
+-- 8
+
+UPDATE bits 
+SET emoticons= 'Jebaited' 
+WHERE emoticons = 'Paqueta';
+
+-- 9
+UPDATE Users
+SET email = 'jane@exemple.com'
+WHERE username = 'jane_smith';
+
+-- 10
+
+UPDATE chaine
+SET nom = 'La Chaine Gaming'
+WHERE ChaineID = 5;
+
+-- 11
+
+UPDATE Badges
+SET niveau = 3
+WHERE BadgesID = 10;
+
+-- 12
+
+UPDATE layout
+SET couleur = '#ff0000'  
+WHERE IDChaine = 3;
+
+-- 13 
+
+select
+    Ban.banID,
+    Users.Username as UtilisateurBanni,
+    Ban.Date_heure_bannissement,
+    Ban.Duree_ban,
+    Ban.Raison_ban,
+    Admins.Username as AdminAyantBanni,
+    Chaine.nom as ChaineConcernee
+from Ban
+join Users on Ban.IdUserbanni = Users.UserID
+left join Moderateur on Ban.IdAdmin = Moderateur.moderateurID
+left join Users as Admins on Moderateur.IdUserModerateur = Admins.UserID
+left join Chaine on Ban.IDChaine = Chaine.ChaineID;
+
+-- 14 
+
+SELECT
+    Users.Username as SenderUsername,
+    Partage.url,
+    Stream.Titre as StreamTitle,
+    Chaine.nom as ChannelName,
+    StreamHistory.StreamDate,
+    Categories.nom as CategoryName
+FROM Partage
+JOIN Users ON Partage.user_id_partageur = Users.UserID
+JOIN Stream ON Partage.IDStream = Stream.StreamID
+JOIN Chaine ON Stream.IDChaine = Chaine.ChaineID
+JOIN StreamHistory ON Stream.StreamID = StreamHistory.StreamID
+JOIN Categories ON Stream.StreamID = Categories.IDStream
+JOIN ParametresCookies ON ParametresCookies.IDUser = Users.UserID
+WHERE Partage.PartageID = 1;
+
+
+-- 15
+
+SELECT
+    Stream.StreamID,
+    Stream.Titre,
+    Stream.Description AS StreamDescription,
+    Stream.debut AS HeureDebut,
+    Stream.fin AS HeureFin,
+    Chaine.ChaineID,
+    Chaine.nom AS NomChaine,
+    Users.UserID,
+    Users.Username AS NomUtilisateur,
+    UserStatistics.Followers,
+    UserStatistics.Subscribers,
+    emotes.nom AS NomEmote,
+    Sub.tier AS TypeAbonnement,
+    FollowerUser.IDFollower AS IDAbonne
+FROM
+    Stream
+JOIN
+    Chaine ON Stream.IDChaine = Chaine.ChaineID
+JOIN
+    Users ON Chaine.IDUser = Users.UserID
+LEFT JOIN
+    UserStatistics ON Users.UserID = UserStatistics.IdUser
+LEFT JOIN
+    emotes ON Chaine.ChaineID = emotes.IDChaine
+LEFT JOIN
+    Sub ON Users.UserID = Sub.IDUsers
+LEFT JOIN
+    FollowerUser ON Users.UserID = FollowerUser.IDUser;
