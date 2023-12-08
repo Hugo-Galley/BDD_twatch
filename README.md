@@ -17,6 +17,13 @@ Ainsi que celle de Full_insert_script.sql et requêtes.sql par :
 ```sql
 USE twitch;
 ```
+
+De plus si vous possedez deja un utilisateurs s'apellant Allan il vous faudrat modifier les lignes suivantes dans le fichier new-user.sql
+
+```sql
+CREATE USER 'votre_nom'@'localhost' IDENTIFIED WITH mysql_native_password BY 'votre_mot_de_passe';
+```
+
 # Modèle de Données
 
 Ce projet repose sur un modèle de données qui se divise en deux parties principales : le Modèle Conceptuel de Données (MCD) et le Modèle Logique de Données (MLD).
