@@ -30,13 +30,13 @@ Ce projet repose sur un modèle de données qui se divise en deux parties princi
 
 ## Modèle Conceptuel de Données (MCD)
 
-![Modèle Conceptuel de Données (MCD)](Modèles_conceptuels/MCD.jpg)
+![Modèle Conceptuel de Données (MCD)](Modèles_conceptuels/MLD.jpg)
 
 Le MCD représente les entités et leurs relations de manière abstraite, offrant une vue globale de la structure de la base de données.
 
 ## Modèle Logique de Données (MLD)
 
-![Modèle Logique de Données (MLD)](Modèles_conceptuels/MLD.jpg)
+![Modèle Logique de Données (MLD)](Modèles_conceptuels/MCD.jpg)
 
 Le MLD traduit le MCD en un schéma relationnel précis, définissant les tables, les clés primaires, les clés étrangères et les contraintes.
 
