@@ -53,7 +53,7 @@ Le projet a pu être mené à bien grâce à la participation de :
 - [Christophe Jarjoura](https://github.com/DysterFall)
 - [Justine Guy](https://github.com/ekyoko)
 - Benmoussa Maïssa
-- Aziz
+- Kouka Aziz
 
 ## Remerciements spéciaux
 
