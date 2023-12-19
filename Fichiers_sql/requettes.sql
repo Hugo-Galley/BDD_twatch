@@ -60,9 +60,11 @@ JOIN PrivateMessages ON PrivateMessages.ReceiverID = Users.UserID
 JOIN badges ON badges.IDChaine = chaine.ChaineID
 JOIN user_settings ON user_settings.IDUser = Users.UserID
 JOIN Don ON Don.user_id_donateur = Users.UserID
-WHERE Notifications.NotificationContent LIKE '%combat de nain%' AND VideoStatistics.views > 4000 
+WHERE Notifications.NotificationContent LIKE '%combat de nain%'
+AND VideoStatistics.views > 4000 
 AND PrivateMessages.MessageContent LIKE '%Hey%'
-AND badges.niveau = 'Niveau 3' AND user_settings.Cacher_état_abonnement_carte_spectateur_chat = true 
+AND badges.niveau = 'Niveau 3' 
+AND user_settings.Cacher_état_abonnement_carte_spectateur_chat = true 
 AND Don.date_don LIKE '%2023-11-26%';
 
 
